@@ -19,15 +19,3 @@ export class FuncionarioService {
   }
 
 }
-
-export class FuncionarioAbreviadoService extends FuncionarioService {
-
-  constructor(private numeroCaracteres: number) {
-    super();
-
-  }
-
-  override adicionar(nome: string): void {
-    super.adicionar(nome.substring(0,this.numeroCaracteres) + '...');
-  }
-}
