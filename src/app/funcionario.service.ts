@@ -1,3 +1,4 @@
+
 export class FuncionarioService {
 
   ultimoId = 1;
@@ -17,4 +18,12 @@ export class FuncionarioService {
     return this.funcionarios;
   }
 
+}
+
+export class FuncionarioAbreviadoService extends FuncionarioService {
+
+
+  override adicionar(nome: string): void {
+    super.adicionar(nome.substring(0,3) + '...');
+  }
 }

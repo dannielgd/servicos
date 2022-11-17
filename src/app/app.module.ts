@@ -1,4 +1,4 @@
-import { FuncionarioService } from './funcionario.service';
+import { FuncionarioService, FuncionarioAbreviadoService } from './funcionario.service';
 import { FuncionarioCardComponent } from './funcionario-card/funcionario-card.component';
 import { FuncionarioFormComponent } from './funcionario-form/funcionario-form.component';
 import { NgModule } from '@angular/core';
@@ -17,7 +17,9 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     FormsModule
   ],
-  providers: [FuncionarioService],
+  providers: [
+    { provide: FuncionarioService, useClass: FuncionarioAbreviadoService }
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
