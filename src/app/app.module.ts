@@ -7,6 +7,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 
+const criarFuncionarioService = () => {
+  return new FuncionarioAbreviadoService(2);
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +22,7 @@ import { FormsModule } from '@angular/forms';
     FormsModule
   ],
   providers: [
-    { provide: FuncionarioService, useClass: FuncionarioAbreviadoService }
+    { provide: FuncionarioService, useFactory: criarFuncionarioService }
 ],
   bootstrap: [AppComponent]
 })
