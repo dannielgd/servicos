@@ -1,3 +1,4 @@
+import { FuncionarioService } from './funcionario.service';
 import { FuncionarioCardComponent } from './funcionario-card/funcionario-card.component';
 import { FuncionarioFormComponent } from './funcionario-form/funcionario-form.component';
 import { NgModule } from '@angular/core';
@@ -16,7 +17,7 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [FuncionarioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
